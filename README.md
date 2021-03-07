@@ -9,8 +9,10 @@ mv .env.example .env
 
 php artisan key:generate
 
+php artisan migrate
+
 // optionally seed the database with some fake data after migrating
-php artisan migrate --seed
+php artisan db:seed
 
 php artisan serve
 ```

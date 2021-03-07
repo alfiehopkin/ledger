@@ -1,0 +1,29 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+module.exports = {
+    purge: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                serif: ['Times', 'Times New Roman', 'Georgia'],
+            },
+        },
+        borderStyles: {
+            colors: true,
+        }
+    },
+
+    variants: {
+        extend: {
+            opacity: ['disabled'],
+        },
+    },
+
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('tailwindcss-border-styles')()],
+};
